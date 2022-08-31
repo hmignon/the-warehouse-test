@@ -20,20 +20,26 @@ def find_boxes():
     for combo in combos:
         i = 0
         diff = 0
-        while diff <= 1 and i < len(combo[0]):
-            if combo[0][i] != combo[1][i]:
+        a = combo[0]
+        b = combo[1]
+
+        while diff <= 1 and i < len(a):
+            if a[i] != b[i]:
                 diff += 1
             i += 1
 
-        if diff == 1 and i == len(combo[0]):
+        if diff == 1 and i == len(a):
             common_letters = ""
 
-            for i in range(len(combo[0])):
-                if combo[0][i] == combo[1][i]:
-                    common_letters += combo[0][i]
+            for i in range(len(a)):
+                if a[i] == b[i]:
+                    common_letters += a[i]
+                else:
+                    diff = i
 
-            print(f"Correct box ids: '{combo[0]}' and '{combo[1]}'")
+            print(f"Correct box IDs: '{a}' and '{b}'")
             print(f"Common letters: '{common_letters}'")
+            print(f"Diff: {a[diff]} and {b[diff]} at index {diff}")
 
             break
 

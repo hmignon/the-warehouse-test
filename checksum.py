@@ -14,10 +14,10 @@ def checksum():
     for box in boxes:
         for char in chars:
             count = box.count(char)
-            if count == 3 and box not in three_letters:
-                three_letters.append(box)
-            elif count == 2 and box not in two_letters:
+            if count == 2 and box not in two_letters:
                 two_letters.append(box)
+            elif count == 3 and box not in three_letters:
+                three_letters.append(box)
 
     print(f"Checksum value: {len(three_letters) * len(two_letters)}")
 
