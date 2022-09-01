@@ -28,7 +28,7 @@ def find_boxes():
                 diff += 1
             i += 1
 
-        if diff == 1 and i == len(a):
+        if diff == 1:
             common_letters = ""
 
             for i in range(len(a)):
